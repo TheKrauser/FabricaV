@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Cinemachine;
 public class Game1_Character : MonoBehaviour
 {
     private Vector2 moveDir;
@@ -19,6 +19,8 @@ public class Game1_Character : MonoBehaviour
 
     public LayerMask groundMask;
     private bool isGrounded;
+
+    public Transform cmFar, cmClose;
 
     private void Start()
     {
@@ -66,13 +68,15 @@ public class Game1_Character : MonoBehaviour
             //anim.SetBool("isJumping", true);
         }
 
-        isGrounded = CheckGround();
 
         anim.SetBool("isJumping", !isGrounded);
     }
 
     private void FixedUpdate()
     {
+        if (rb.velocity.y < 0)
+            isGrounded = CheckGround();
+
         if (Input.GetKey(KeyCode.A))
             rb.velocity = new Vector2(-speed, rb.velocity.y);
         else
@@ -101,13 +105,17 @@ public class Game1_Character : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        if (collision.CompareTag("Trigger"))
+        {
+            cmClose.gameObject.SetActive(false);
+            cmFar.gameObject.SetActive(true);
+        }
     }
 
     private bool CheckGround()
     {
-        RaycastHit2D ray = Physics2D.Raycast(box2D.bounds.center, Vector2.down, box2D.bounds.extents.y + 0.1f, groundMask);
-        Debug.DrawRay(box2D.bounds.center, Vector2.down * (box2D.bounds.extents.y + 0.1f));
+        RaycastHit2D ray = Physics2D.Raycast(new Vector2(box2D.bounds.center.x, box2D.bounds.center.y - (box2D.bounds.extents.y / 2)), Vector2.down, box2D.bounds.extents.y + 0.15f, groundMask);
+        Debug.DrawRay(new Vector2(box2D.bounds.center.x, box2D.bounds.center.y - (box2D.bounds.extents.y / 2)), Vector2.down * (box2D.bounds.extents.y + 0.15f));
         return ray.collider != null;
     }
 }
