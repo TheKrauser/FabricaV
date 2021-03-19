@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Playables;
 public class Game1_Character : MonoBehaviour
 {
     private Vector2 moveDir;
@@ -21,6 +22,8 @@ public class Game1_Character : MonoBehaviour
     private bool isGrounded;
 
     public Transform cmFar, cmClose;
+
+    public PlayableDirector playable;
 
     private void Start()
     {
@@ -70,6 +73,9 @@ public class Game1_Character : MonoBehaviour
 
 
         anim.SetBool("isJumping", !isGrounded);
+
+        if (Input.GetKeyDown(KeyCode.P))
+            playable.Play();
     }
 
     private void FixedUpdate()
