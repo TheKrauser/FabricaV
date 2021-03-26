@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Casa Teste.unity
     guid: 22e1b528aabae36439469338d559566b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game1.unity
     guid: 4def5e257fcdb9b43ae5cae4aceb163e
   m_configObjects: {}
