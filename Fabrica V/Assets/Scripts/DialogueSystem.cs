@@ -5,7 +5,7 @@ using System;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Playables;
-
+using UnityEngine.SceneManagement;
 public class DialogueSystem : MonoBehaviour
 {
     private int positionInArray;
@@ -16,17 +16,28 @@ public class DialogueSystem : MonoBehaviour
 
     public TextMeshProUGUI textGO;
     public Image character;
+    public GameObject majorDialogueGO;
     public TextVariables[] text;
+
+    [SerializeField] private bool playOnAwake;
+    [SerializeField] private bool destroyOnEnd;
+    [SerializeField] private bool doSomething;
+    [SerializeField] private bool changeScene;
+    [SerializeField] private Transform actionObject;
+    [SerializeField] private string selectedScene;
 
     void Start()
     {
-        StartCoroutine(DisplayText());
+        if (playOnAwake)
+            StartCoroutine(DisplayText());
+        else
+            return;
     }
 
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             if (canSkipDialogue)
             {
@@ -34,13 +45,17 @@ public class DialogueSystem : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.C))
             xKeyPressed = true;
     }
 
-    private IEnumerator DisplayText()
+    public IEnumerator DisplayText()
     {
-        scene.playableGraph.GetRootPlayable(0).SetSpeed(0);
+        //Debug.Log(positionInArray);
+        if (scene != null)
+            scene.playableGraph.GetRootPlayable(0).SetSpeed(0);
+
+        majorDialogueGO.SetActive(true);
         canSkipDialogue = false;
         xKeyPressed = false;
         string v = "";
@@ -87,8 +102,27 @@ public class DialogueSystem : MonoBehaviour
 
         else
         {
-            Destroy(gameObject);
-            scene.playableGraph.GetRootPlayable(0).SetSpeed(1);
+            positionInArray = 0;
+            this.enabled = false;
+            majorDialogueGO.SetActive(false);
+
+            var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Game2_Character>();
+            character.ChangeState(Game2_Character.State.IDLE);
+
+            if (scene != null)
+                scene.playableGraph.GetRootPlayable(0).SetSpeed(1);
+
+            if (doSomething)
+            {
+                var acAnim = actionObject.GetComponent<Animator>();
+                acAnim.enabled = true;
+            }
+
+            if (changeScene)
+                SceneManager.LoadScene(selectedScene);
+
+            if (destroyOnEnd)
+                Destroy(gameObject);
         }
     }
 }

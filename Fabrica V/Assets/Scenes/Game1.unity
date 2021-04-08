@@ -501,6 +501,7 @@ MonoBehaviour:
     imageCharacter: {fileID: -5051191290193874270, guid: 521b44e9e687d4d46b847da5c032a9da,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!224 &18762129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1800,6 +1801,7 @@ MonoBehaviour:
     imageCharacter: {fileID: 1349057004620875488, guid: 6031c81abe7a4b5429734401b5d3962e,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!1 &104001765
 GameObject:
   m_ObjectHideFlags: 0
@@ -6127,6 +6129,7 @@ MonoBehaviour:
     imageCharacter: {fileID: 6783696417705810119, guid: 6d4fff4868a49f04aa30a128beabe203,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!224 &521116991
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13149,6 +13152,7 @@ MonoBehaviour:
     imageCharacter: {fileID: 6397761816142446635, guid: a5b73ed2c688e3d4c8652e6906f42786,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!1 &1231899381
 GameObject:
   m_ObjectHideFlags: 0
@@ -18251,6 +18255,7 @@ MonoBehaviour:
     imageCharacter: {fileID: -8820820206106208441, guid: 32f29751c5fcfdf419924f9996e737ed,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!1 &1241269012
 GameObject:
   m_ObjectHideFlags: 0
@@ -18697,6 +18702,7 @@ MonoBehaviour:
     imageCharacter: {fileID: -8820820206106208441, guid: 32f29751c5fcfdf419924f9996e737ed,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!1 &1274031060
 GameObject:
   m_ObjectHideFlags: 3
@@ -26518,6 +26524,7 @@ MonoBehaviour:
     imageCharacter: {fileID: 1349057004620875488, guid: 6031c81abe7a4b5429734401b5d3962e,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
+  playOnAwake: 1
 --- !u!1 &1673856606
 GameObject:
   m_ObjectHideFlags: 0
