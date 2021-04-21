@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Playables;
 public class Game1_Character : MonoBehaviour
 {
     private Vector2 moveDir;
@@ -14,6 +15,8 @@ public class Game1_Character : MonoBehaviour
     public float lowJumpMultiplier;
     private bool isJumping;
     private bool facingRight;
+    public float test;
+    public float test2;
 
     private Transform visuals;
 
@@ -22,6 +25,8 @@ public class Game1_Character : MonoBehaviour
 
     public Transform cmFar, cmClose;
 
+    public PlayableDirector playable;
+
     private void Start()
     {
         anim = transform.Find("Visuals").GetComponent<Animator>();
@@ -29,6 +34,7 @@ public class Game1_Character : MonoBehaviour
         box2D = GetComponent<BoxCollider2D>();
         isJumping = false;
         visuals = transform.Find("Visuals").GetComponent<Transform>();
+        facingRight = true;
     }
     private void Update()
     {
@@ -70,6 +76,9 @@ public class Game1_Character : MonoBehaviour
 
 
         anim.SetBool("isJumping", !isGrounded);
+
+        if (Input.GetKeyDown(KeyCode.P))
+            playable.Play();
     }
 
     private void FixedUpdate()
@@ -110,12 +119,16 @@ public class Game1_Character : MonoBehaviour
             cmClose.gameObject.SetActive(false);
             cmFar.gameObject.SetActive(true);
         }
+
+        if (collision.CompareTag("Scene"))
+            playable.Play();
     }
 
     private bool CheckGround()
     {
+        //RaycastHit2D ray = Physics2D.BoxCast(new Vector2(box2D.bounds.center.x, box2D.bounds.center.y - 1f), box2D.bounds.size - new Vector3(0.1f, 1f, 0f), 0f, Vector2.down, test, groundMask); ;
         RaycastHit2D ray = Physics2D.Raycast(new Vector2(box2D.bounds.center.x, box2D.bounds.center.y - (box2D.bounds.extents.y / 2)), Vector2.down, box2D.bounds.extents.y + 0.15f, groundMask);
-        Debug.DrawRay(new Vector2(box2D.bounds.center.x, box2D.bounds.center.y - (box2D.bounds.extents.y / 2)), Vector2.down * (box2D.bounds.extents.y + 0.15f));
+        //Debug.DrawRay(box2D.bounds.center - new Vector3(box2D.bounds.extents.x, box2D.bounds.extents.y + 1f), Vector2.right * (box2D.bounds.extents.x * 2f));
         return ray.collider != null;
     }
 }
