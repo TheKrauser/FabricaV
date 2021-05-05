@@ -13,4 +13,13 @@ public class BounceCloud : MonoBehaviour
             character.Bounce();
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Feet"))
+        {
+            var character = collision.GetComponentInParent<Game1_Character>();
+            character.Bounce();
+        }
+    }
 }
