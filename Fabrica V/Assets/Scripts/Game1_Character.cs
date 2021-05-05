@@ -30,6 +30,8 @@ public class Game1_Character : MonoBehaviour
     [SerializeField] private float raycastLength;
     [SerializeField] private Transform g1, g2, g3;
 
+    private bool inputJump = false;
+
     private State state;
 
     public enum State
@@ -53,10 +55,13 @@ public class Game1_Character : MonoBehaviour
         {
             case State.IDLE:
 
+                float x = Input.GetAxisRaw("Horizontal");
+
+                if (!inputJump && isGrounded)
+                    inputJump = Input.GetKeyDown(KeyCode.Space);
+
                 if (rb.velocity.y < 0)
                     isGrounded = CheckGround();
-
-                float x = Input.GetAxisRaw("Horizontal");
 
                 anim.SetFloat("Speed", Mathf.Abs(x));
 
@@ -100,11 +105,6 @@ public class Game1_Character : MonoBehaviour
 
 
         anim.SetBool("isJumping", !isGrounded);
-
-        if (Input.GetKeyDown(KeyCode.P))
-            playable.Play();
-
-        Debug.Log(state);
     }
 
     private void FixedUpdate()
@@ -123,10 +123,11 @@ public class Game1_Character : MonoBehaviour
                         rb.velocity = new Vector2(0, rb.velocity.y);
                 }
 
-                if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+                if (inputJump)
                 {
-                    rb.velocity = Vector2.up * jumpForce;
+                    Jump();
                 }
+
                 break;
 
             case State.DIALOGUE:
@@ -136,7 +137,8 @@ public class Game1_Character : MonoBehaviour
 
     void Jump()
     {
-        rb.AddForce(Vector2.up * jumpForce * Time.deltaTime);
+        rb.velocity = Vector2.up * jumpForce;
+        inputJump = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

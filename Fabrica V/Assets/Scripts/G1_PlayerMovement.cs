@@ -128,6 +128,6 @@ public class G1_PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(box2D.bounds.center, box2D.bounds.center + Vector3.down * groundRaycastLength);
+        //Gizmos.DrawLine(box2D.bounds.center, box2D.bounds.center + Vector3.down * groundRaycastLength);
     }
 }
