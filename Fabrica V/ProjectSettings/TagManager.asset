@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Trigger
   - Scene
+  - Cloud
+  - Feet
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - 
   - Ground
   - Obstacle
-  - 
+  - Cloud
   - 
   - 
   - 

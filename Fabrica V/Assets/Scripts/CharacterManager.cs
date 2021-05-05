@@ -8,8 +8,9 @@ public class CharacterManager : MonoBehaviour
 {
     FirstPersonAIO firstPerson;
     Camera playerCamera;
-    private Outline selectionOutline;
-    public Image button;
+    private OutlineShader selectionOutline;
+    private OutlineShader oldSelection;
+    private Ray r;
 
     private void Awake()
     {
@@ -24,29 +25,70 @@ public class CharacterManager : MonoBehaviour
     void Update()
     {
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
+
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, 2))
+        if (Physics.Raycast(ray, out hit, 3f))
         {
             Transform selection = hit.transform;
 
-            if (selection.GetComponent<Outline>() != null)
+            if (selection != null && selection.GetComponent<OutlineShader>() != null)
             {
-                selectionOutline = selection.GetComponent<Outline>();
+                selectionOutline = selection.GetComponent<OutlineShader>();
                 selectionOutline.enabled = true;
-                button.enabled = true;
+                oldSelection = selectionOutline;
                 if (Input.GetKeyDown(KeyCode.E))
-                    SceneManager.LoadScene("Game1");
+                {
+                    if (selection.GetComponent<BookManager>() != null)
+                    {
+                        var book = selection.GetComponent<BookManager>();
+                        book.OpenBook(firstPerson);
+                    }
+
+                    else if (selection.GetComponent<Door_Config>() != null)
+                    {
+                        var doorScript = selection.GetComponent<Door_Config>();
+                        var anim = selection.GetComponent<Animator>();
+                        bool door = anim.GetBool("Door");
+                        if (door)
+                        {
+                            doorScript.CloseDoor();
+                        }
+                        else
+                        {
+                            doorScript.OpenDoor();
+                        }
+                    }
+
+                    else
+                        return;
+                }
+
+                if (Input.GetKeyDown(KeyCode.R) && selection.GetComponent<BookManager>() != null)
+                {
+                    var book = selection.GetComponent<BookManager>();
+                    var bookUI = selection.GetComponent<BookUI>();
+                    book.CloseBook(firstPerson);
+                }
             }
 
             else
             {
-                if (selectionOutline != null)
+                //selection = null;
+                if (selectionOutline != null || selection == null)
                 {
                     selectionOutline.enabled = false;
-                    button.enabled = false;
+                    oldSelection.enabled = false;
                 }
                 else
                     return;
+            }
+        }
+        else
+        {
+            if (selectionOutline != null)
+            {
+                selectionOutline.enabled = false;
+                oldSelection.enabled = false;
             }
         }
     }

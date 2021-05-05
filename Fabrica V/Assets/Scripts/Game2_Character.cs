@@ -153,4 +153,9 @@ public class Game2_Character : MonoBehaviour
             dial = null;
         }
     }
+
+    public void SetDialogue()
+    {
+        ChangeState(State.DIALOGUE);
+    }
 }

@@ -25,6 +25,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private bool changeScene;
     [SerializeField] private Transform actionObject;
     [SerializeField] private string selectedScene;
+    [SerializeField] private bool game1;
 
     void Start()
     {
@@ -106,8 +107,17 @@ public class DialogueSystem : MonoBehaviour
             this.enabled = false;
             majorDialogueGO.SetActive(false);
 
-            var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Game2_Character>();
-            character.ChangeState(Game2_Character.State.IDLE);
+            /*if (!game1)
+            {
+                var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Game2_Character>();
+                character.ChangeState(Game2_Character.State.IDLE);
+            }*/
+
+            if (game1)
+            {
+                var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Game1_Character>();
+                character.ChangeState(Game1_Character.State.IDLE);
+            }
 
             if (scene != null)
                 scene.playableGraph.GetRootPlayable(0).SetSpeed(1);
