@@ -8,6 +8,7 @@ TagManager:
   - Scene
   - Cloud
   - Feet
+  - PlayerTrigger
   layers:
   - Default
   - TransparentFX
