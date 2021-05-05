@@ -188,6 +188,13 @@ public class Game1_Character : MonoBehaviour
         return ground;
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(g1.position, raycastLength);
+        Gizmos.DrawWireSphere(g3.position, raycastLength);
+    }
+
     public void ChangeState(State stateS)
     {
         state = stateS;
