@@ -10,7 +10,6 @@ public class CharacterManager : MonoBehaviour
     Camera playerCamera;
     private OutlineShader selectionOutline;
     private OutlineShader oldSelection;
-    private Ray r;
 
     private void Awake()
     {

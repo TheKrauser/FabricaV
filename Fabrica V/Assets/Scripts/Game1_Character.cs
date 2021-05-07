@@ -29,6 +29,7 @@ public class Game1_Character : MonoBehaviour
 
     [SerializeField] private float raycastLength;
     [SerializeField] private Transform g1, g2, g3;
+    private float x;
 
     private bool inputJump = false;
 
@@ -55,7 +56,7 @@ public class Game1_Character : MonoBehaviour
         {
             case State.IDLE:
 
-                float x = Input.GetAxisRaw("Horizontal");
+                x = Input.GetAxisRaw("Horizontal");
 
                 if (!inputJump && isGrounded)
                     inputJump = Input.GetKeyDown(KeyCode.Space);
@@ -81,6 +82,9 @@ public class Game1_Character : MonoBehaviour
                 break;
 
             case State.DIALOGUE:
+                x = 0;
+
+                anim.SetFloat("Speed", 0);
                 break;
         }
 
@@ -128,9 +132,15 @@ public class Game1_Character : MonoBehaviour
                     Jump();
                 }
 
+                if (Input.GetKeyDown(KeyCode.O))
+                {
+                    transform.position = new Vector2(-12.5f, 63f);
+                }
+
                 break;
 
             case State.DIALOGUE:
+                rb.velocity = new Vector2(0, rb.velocity.y);
                 break;
         }
     }
@@ -155,7 +165,10 @@ public class Game1_Character : MonoBehaviour
         }
 
         if (collision.CompareTag("Scene"))
-            playable.Play();
+        {
+            LoadingScene.Instance.StartCoroutine(LoadingScene.Instance.FadeCutscene(2f, playable));
+            ChangeState(State.DIALOGUE);
+        }
     }
 
     private bool CheckGround()

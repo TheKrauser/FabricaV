@@ -34,7 +34,7 @@ public class BookUI : MonoBehaviour
             {
                 isLoading = true;
                 AudioManager.Instance.PlaySoundEffect("Scene");
-                loading.LoadScene("Game1");
+                loading.LoadScene("Game1 Test");
             }
         }
 
