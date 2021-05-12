@@ -3,8 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.Playables;
+using Photon.Pun;
+using Photon.Realtime;
+
 public class Game1_Character : MonoBehaviour
 {
+
+    PhotonView photonView;
+
     private Vector2 moveDir;
     private Rigidbody2D rb;
     private Animator anim;
@@ -49,9 +55,15 @@ public class Game1_Character : MonoBehaviour
         isJumping = false;
         visuals = transform.Find("Visuals").GetComponent<Transform>();
         facingRight = true;
+
+        photonView = GetComponent<PhotonView>();
     }
     private void Update()
     {
+        if (!photonView.IsMine)
+        {
+            return;
+        }
         switch (state)
         {
             case State.IDLE:
