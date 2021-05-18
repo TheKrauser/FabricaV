@@ -60,7 +60,7 @@ public class Game1_Character : MonoBehaviour
     }
     private void Update()
     {
-        if (!photonView.IsMine)
+        if (photonView!= null && !photonView.IsMine)
         {
             return;
         }

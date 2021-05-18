@@ -10,6 +10,8 @@ TagManager:
   - Feet
   - PlayerTrigger
   - Chegada
+  - Cinemachine
+  - G2_End
   layers:
   - Default
   - TransparentFX

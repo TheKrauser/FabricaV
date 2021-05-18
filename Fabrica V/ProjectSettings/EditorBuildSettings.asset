@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Casa/Scene/CasaConfig.unity
     guid: 9a4fac08505d7594f8cdb521414915a8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Game1 Test.unity
     guid: a6ff2a39e129bd140b144ebbf1111f60
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Tree.unity
     guid: 17d28f54925406b4ba7383900ca21b90
   - enabled: 1
+    path: Assets/Scenes/Dungeon.unity
+    guid: feef551751c9fd145b524bbe5960c527
+  - enabled: 0
     path: Assets/Scenes/Multiplayer.unity
     guid: 2361bc2af2a21a342be222b194470254
   m_configObjects: {}

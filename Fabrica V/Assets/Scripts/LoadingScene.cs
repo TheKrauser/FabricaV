@@ -66,4 +66,22 @@ public class LoadingScene : MonoBehaviour
         canvas.gameObject.SetActive(false);
         director.Play();
     }
+
+    public IEnumerator FadeOutGame2(float fadeTime, float timeToShowLoading, Game2_Character character)
+    {
+        Time.timeScale = 0;
+        //character.ChangeState(Game2_Character.State.DIALOGUE);
+        var bg = blackScreen.GetComponent<CanvasGroup>();
+        bg.DOFade(1, fadeTime).SetUpdate(true);
+        yield return new WaitForSecondsRealtime(0.005f);
+    }
+
+    public IEnumerator FadeInGame2(float fadeTime, float waitTime, Game2_Character character)
+    {
+        yield return new WaitForSecondsRealtime(waitTime + fadeTime);
+        var bg = blackScreen.GetComponent<CanvasGroup>();
+        bg.DOFade(0, fadeTime).SetUpdate(true);
+        Time.timeScale = 1;
+        //character.ChangeState(Game2_Character.State.IDLE);
+    }
 }

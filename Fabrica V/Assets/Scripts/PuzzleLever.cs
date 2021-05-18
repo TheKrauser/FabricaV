@@ -6,15 +6,20 @@ public class PuzzleLever : MonoBehaviour
 {
     [SerializeField] private PuzzleManager puzzleManager;
     private SpriteRenderer render;
+    private SpriteRenderer baseRender;
+    private Animator anim;
     [SerializeField] private int position;
     private bool on;
     private bool canSwitch;
+    public static bool puzzleSolved;
 
     private void Start()
     {
         render = GetComponent<SpriteRenderer>();
+        baseRender = GetComponentsInChildren<SpriteRenderer>()[1];
+        anim = GetComponent<Animator>();
         canSwitch = false;
-        render.color = Color.red;
+        baseRender.color = Color.red;
     }
 
     private void Update()
@@ -47,15 +52,17 @@ public class PuzzleLever : MonoBehaviour
         if (!on)
         {
             on = true;
-            render.color = Color.green;
-            puzzleManager.test[position] = true;
+            anim.SetBool("isActive", on);
+            baseRender.color = Color.green;
+            puzzleManager.attempt[position] = true;
             puzzleManager.CheckPuzzleLever();
         }
         else
         {
             on = false;
-            render.color = Color.red;
-            puzzleManager.test[position] = false;
+            anim.SetBool("isActive", on);
+            baseRender.color = Color.red;
+            puzzleManager.attempt[position] = false;
             puzzleManager.CheckPuzzleLever();
         }
     }

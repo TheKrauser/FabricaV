@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
@@ -19,13 +19,28 @@ public class DialogueSystem : MonoBehaviour
     public GameObject majorDialogueGO;
     public TextVariables[] text;
 
+    public bool activateOnTriggerEnter;
+    public bool activateOnTriggerExit;
     [SerializeField] private bool playOnAwake;
     [SerializeField] private bool destroyOnEnd;
     [SerializeField] private bool doSomething;
+    [SerializeField] private bool activateObjectOnEnd;
     [SerializeField] private bool changeScene;
     [SerializeField] private Transform actionObject;
+    [SerializeField] private Transform activateObject;
     [SerializeField] private string selectedScene;
-    [SerializeField] private bool game1;
+    [SerializeField] private bool game1; 
+
+    public State contoAtual;
+
+    public enum State
+    {
+        CUTSCENE,
+        CONTO_1,
+        CONTO_2,
+        CONTO_3,
+        CONTO_4
+    }
 
     void Start()
     {
@@ -33,6 +48,7 @@ public class DialogueSystem : MonoBehaviour
             StartCoroutine(DisplayText());
         else
             return;
+
     }
 
 
@@ -107,13 +123,13 @@ public class DialogueSystem : MonoBehaviour
             this.enabled = false;
             majorDialogueGO.SetActive(false);
 
-            /*if (!game1)
+            if (contoAtual == State.CONTO_2)
             {
                 var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Game2_Character>();
                 character.ChangeState(Game2_Character.State.IDLE);
-            }*/
+            }
 
-            if (game1)
+            if (contoAtual == State.CONTO_1)
             {
                 var character = GameObject.FindGameObjectWithTag("Player").GetComponent<Game1_Character>();
                 character.ChangeState(Game1_Character.State.IDLE);
@@ -124,18 +140,54 @@ public class DialogueSystem : MonoBehaviour
 
             if (doSomething)
             {
-                var acAnim = actionObject.GetComponent<Animator>();
-                acAnim.enabled = true;
+                if (actionObject != null)
+                {
+                    var acAnim = actionObject.GetComponent<Animator>();
+                    acAnim.enabled = true;
+                }
+
+                if (activateObject != null)
+                {
+                    var acObject = activateObject.gameObject;
+                    acObject.SetActive(true);
+                }
             }
 
             if (changeScene)
-                SceneManager.LoadScene(selectedScene);
+            LoadingScene.Instance.LoadScene(selectedScene);
 
             if (destroyOnEnd)
                 Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (activateOnTriggerEnter)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                var character = collision.GetComponent<Game2_Character>();
+                character.ChangeState(Game2_Character.State.DIALOGUE_WALK);
+                ShowNextSentence();
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (activateOnTriggerExit)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                var character = collision.GetComponent<Game2_Character>();
+                character.ChangeState(Game2_Character.State.DIALOGUE_WALK);
+                ShowNextSentence();
+            }
+        }
+    }
 }
+
 
 [Serializable]
 public struct TextVariables

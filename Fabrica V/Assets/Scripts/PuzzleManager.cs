@@ -16,7 +16,12 @@ public class PuzzleManager : MonoBehaviour
     [Header("Puzzle das Alavancas")]
     public bool[] levers = { false, true, true, true };
     public List<bool> attempts = new List<bool>(4);
-    public bool[] test = { false, false, false, false };
+    public bool[] attempt = { false, false, false, false };
+
+    [SerializeField] private Transform puzzleDoor, puzzleCollider;
+    [SerializeField] private Game2_Character charrr;
+
+    private bool oneTimeActivatePuzzleComplete = false;
 
     private void Start()
     {
@@ -25,7 +30,22 @@ public class PuzzleManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            PuzzleButton.puzzleSolved = true;
+            PuzzleLever.puzzleSolved = true;
+        }
 
+        if (PuzzleLever.puzzleSolved && PuzzleButton.puzzleSolved)
+        {
+            if (!oneTimeActivatePuzzleComplete)
+            {
+                StartCoroutine(charrr.TimerChangeState(3f));
+                puzzleCollider.gameObject.SetActive(false);
+                puzzleDoor.gameObject.SetActive(true);
+                oneTimeActivatePuzzleComplete = true;
+            }
+        }
     }
 
     public void CheckPuzzle()
@@ -48,6 +68,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (guessedNumbers == 9)
         {
+            PuzzleButton.puzzleSolved = true;
             Debug.Log("Password Correct!");
             guessedNumbers = 0;
             rightNumber = true;
@@ -60,8 +81,10 @@ public class PuzzleManager : MonoBehaviour
         {
             var buttonScript = buttons[i].GetComponent<PuzzleButton>();
             var sRender = buttons[i].GetComponent<SpriteRenderer>();
-            sRender.color = Color.white;
+            var anim = buttons[i].GetComponent<Animator>();
+            //sRender.color = Color.white;
             buttonScript.triggered = false;
+            anim.SetBool("isPressed", buttonScript.triggered);
             buttonsNumber.Clear();
         }
     }
@@ -72,7 +95,7 @@ public class PuzzleManager : MonoBehaviour
 
         for (int i = 0; i < levers.Length; i++)
         {
-            if (levers[i] == test[i])
+            if (levers[i] == attempt[i])
             {
                 rightPassword++;
             }
@@ -81,6 +104,7 @@ public class PuzzleManager : MonoBehaviour
         if (rightPassword == 4)
         {
             Debug.Log("Correct");
+            PuzzleLever.puzzleSolved = true;
         }
         else
         {
