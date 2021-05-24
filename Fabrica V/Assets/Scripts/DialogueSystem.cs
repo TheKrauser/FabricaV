@@ -28,6 +28,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private bool changeScene;
     [SerializeField] private Transform actionObject;
     [SerializeField] private Transform activateObject;
+    [SerializeField] private Transform destroyObject;
     [SerializeField] private string selectedScene;
     [SerializeField] private bool game1; 
 
@@ -151,7 +152,15 @@ public class DialogueSystem : MonoBehaviour
                     var acObject = activateObject.gameObject;
                     acObject.SetActive(true);
                 }
+
+                if (destroyObject != null)
+                {
+                    Destroy(destroyObject.gameObject);
+                }
             }
+
+            if (contoAtual == State.CONTO_2)
+            StartCoroutine(ResetInteract());
 
             if (changeScene)
             LoadingScene.Instance.LoadScene(selectedScene);
@@ -167,8 +176,9 @@ public class DialogueSystem : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
+                this.enabled = true;
                 var character = collision.GetComponent<Game2_Character>();
-                character.ChangeState(Game2_Character.State.DIALOGUE_WALK);
+                character.ChangeState(Game2_Character.State.DIALOGUE_IDLE);
                 ShowNextSentence();
             }
         }
@@ -180,11 +190,18 @@ public class DialogueSystem : MonoBehaviour
         {
             if (collision.CompareTag("Player"))
             {
+                this.enabled = true;
                 var character = collision.GetComponent<Game2_Character>();
                 character.ChangeState(Game2_Character.State.DIALOGUE_WALK);
                 ShowNextSentence();
             }
         }
+    }
+
+    private IEnumerator ResetInteract()
+    {
+        yield return 0;
+        Game2_Character.canInteract = true;
     }
 }
 

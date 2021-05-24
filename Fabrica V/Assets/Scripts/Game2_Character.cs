@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.Playables;
 
 public class Game2_Character : MonoBehaviour
 {
@@ -16,11 +17,13 @@ public class Game2_Character : MonoBehaviour
     private int horAnim, verAnim;
     private bool moveUp, moveDown, moveLeft, moveRight;
 
-    private bool canInteract;
+    public static bool canInteract;
     private DialogueSystem dial;
 
     private State state;
     private bool notWalking;
+
+    [SerializeField] private PlayableDirector playable;
 
     public enum State
     {
@@ -57,6 +60,11 @@ public class Game2_Character : MonoBehaviour
                 transform.position = oldMovePointPosition.position;
                 movePoint.position = oldMovePointPosition.position;
                 break;
+        }
+
+        if(Input.GetKey(KeyCode.R))
+        {
+            speed = 6f;
         }
     }
 
@@ -177,7 +185,8 @@ public class Game2_Character : MonoBehaviour
 
         if (collision.CompareTag("G2_End"))
         {
-            LoadingScene.Instance.LoadScene("CasaConfig");
+            LoadingScene.Instance.StartCoroutine(LoadingScene.Instance.FadeCutscene(2f, playable));
+            ChangeState(State.DIALOGUE_IDLE);
         }
     }
 

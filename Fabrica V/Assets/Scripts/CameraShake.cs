@@ -28,7 +28,7 @@ public class CameraShake : MonoBehaviour
     public IEnumerator ShakeCameraCoroutine(float intensity, float time)
     {
         //acCam = GameObject.Find("Cameras/").GetComponent<CinemachineVirtualCamera>();
-        //acCam = GameObject.FindGameObjectWithTag("Cinemachine").GetComponent<CinemachineVirtualCamera>();
+        acCam = GameObject.FindGameObjectWithTag("Cinemachine").GetComponent<CinemachineVirtualCamera>();
 
         CinemachineBasicMultiChannelPerlin channel;
         channel = acCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();

@@ -11,6 +11,7 @@ public class BookUI : MonoBehaviour
     public LoadingScene loading;
     private bool isLoading;
     [HideInInspector] public bool canFlip;
+    [SerializeField] private string sceneToLoad;
 
     private void Start()
     {
@@ -34,7 +35,7 @@ public class BookUI : MonoBehaviour
             {
                 isLoading = true;
                 AudioManager.Instance.PlaySoundEffect("Scene");
-                loading.LoadScene("Game1 Test");
+                loading.LoadScene(sceneToLoad);
             }
         }
 
