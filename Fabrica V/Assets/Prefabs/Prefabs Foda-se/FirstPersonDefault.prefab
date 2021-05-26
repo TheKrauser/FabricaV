@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7088631310727337590}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: HeadJoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7165318937966360610}
   - component: {fileID: 7199462891926889344}
   - component: {fileID: 7084461922646515029}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Player Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -146,8 +146,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
-  m_RenderPostProcessing: 1
-  m_Antialiasing: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 7184672654594380216}
   - component: {fileID: 7188906555667961956}
   - component: {fileID: 7084461922543499239}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: FirstPerson
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7086170502597358754}
-  m_LocalRotation: {x: 0, y: 0.9990687, z: -0, w: -0.043148536}
+  m_LocalRotation: {x: -0, y: 0.99906856, z: -0, w: -0.04315175}
   m_LocalPosition: {x: -20.3, y: 0.88, z: 4.821}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -340,7 +340,7 @@ MonoBehaviour:
   lockAndHideCursor: 1
   playerCamera: {fileID: 7068593547174644228}
   enableCameraShake: 1
-  autoCrosshair: 0
+  autoCrosshair: 1
   drawStaminaMeter: 1
   Crosshair: {fileID: 21300000, guid: 7fa7752f7f2a3fc4fbc2bcaea5671e2d, type: 3}
   targetAngles: {x: 0, y: 0, z: 0}
@@ -352,7 +352,7 @@ MonoBehaviour:
   jumpPower: 5
   canJump: 0
   canHoldJump: 0
-  useStamina: 0
+  useStamina: 1
   staminaDepletionSpeed: 2
   staminaLevel: 50
   speed: 0
@@ -368,9 +368,9 @@ MonoBehaviour:
     gravityMultiplier: 1
     zeroFrictionMaterial: {fileID: 0}
     highFrictionMaterial: {fileID: 0}
-    maxSlopeAngle: 55
+    maxSlopeAngle: 70
     maxWallShear: 89
-    maxStepHeight: 0
+    maxStepHeight: 0.2
     curntGroundNormal: {x: 0, y: 0, z: 0}
     moveDirRef: {x: 0, y: 0}
     lastKnownSlopeAngle: 0
@@ -398,8 +398,7 @@ MonoBehaviour:
   fsmode: 1
   dynamicFootstep:
     materialMode: 0
-    woodPhysMat:
-    - {fileID: 13400000, guid: ca77fab071e4fe54a96e7ba076c336bb, type: 2}
+    woodPhysMat: []
     metalAndGlassPhysMat: []
     grassPhysMat: []
     dirtAndGravelPhysMat: []
@@ -414,17 +413,7 @@ MonoBehaviour:
     mudMat: []
     customMat: []
     currentClipSet: []
-    woodClipSet:
-    - {fileID: 8300000, guid: 8e001351cd7065543a068386cde4c960, type: 3}
-    - {fileID: 8300000, guid: c41fb169b2991c247a5466e00faa6639, type: 3}
-    - {fileID: 8300000, guid: 76c66b3ae15685a45a334b0628d1edd1, type: 3}
-    - {fileID: 8300000, guid: cb9aa4db4b3a12147bf2fe3d88fee270, type: 3}
-    - {fileID: 8300000, guid: 2e832dbb2c7c9ba4e97fd3005fe850b7, type: 3}
-    - {fileID: 8300000, guid: 3af6e561e364a274aa306461461c386b, type: 3}
-    - {fileID: 8300000, guid: 30668cf6c5cbfef478b0812fc59eb646, type: 3}
-    - {fileID: 8300000, guid: eea9624d96ae191439615ca598fe01fa, type: 3}
-    - {fileID: 8300000, guid: a45bdfd5056ed1d4d8f667cc2498ca12, type: 3}
-    - {fileID: 8300000, guid: ec4bd5988d7de0c41ab2d9959705dd8b, type: 3}
+    woodClipSet: []
     metalAndGlassClipSet: []
     grassClipSet:
     - {fileID: 8300000, guid: e70c5fa5ed6b97f41aa555d63ca56d42, type: 3}
@@ -476,3 +465,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d13f2c47b1d6fa4eaa67a86fe98475c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 0}

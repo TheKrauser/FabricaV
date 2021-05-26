@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class MenuTransitions : MonoBehaviour
 {
+    public static Transform activeOption, oldOption;
     public static MenuTransitions Instance;
 
     void Awake()
@@ -15,11 +16,13 @@ public class MenuTransitions : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
-    void Update()
+    public void Transition(Transform disable, Transform enable)
     {
-        
+        disable.gameObject.SetActive(false);
+        enable.gameObject.SetActive(true);
     }
+
 }
