@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
@@ -10,6 +10,7 @@ public class Game2_Character : MonoBehaviour
     public float offset;
     public Transform movePoint;
     public Transform oldMovePointPosition;
+    public Transform interact;
 
     public LayerMask cantMoveLayers;
 
@@ -17,7 +18,7 @@ public class Game2_Character : MonoBehaviour
     private int horAnim, verAnim;
     private bool moveUp, moveDown, moveLeft, moveRight;
 
-    public static bool canInteract;
+    public static bool canInteract = false;
     private DialogueSystem dial;
 
     private State state;
@@ -30,6 +31,7 @@ public class Game2_Character : MonoBehaviour
         IDLE,
         DIALOGUE_IDLE,
         DIALOGUE_WALK,
+        PAUSE,
     }
 
     void Start()
@@ -38,12 +40,18 @@ public class Game2_Character : MonoBehaviour
 
         movePoint.parent = null;
         oldMovePointPosition.parent = null;
+        canInteract = false;
 
         state = State.IDLE;
     }
 
     void Update()
     {
+        /*if (PauseManager.Instance.isPaused)
+        {
+            ChangeState(State.PAUSE);
+        }*/
+
         switch(state)
         {
             case State.IDLE:
@@ -60,12 +68,17 @@ public class Game2_Character : MonoBehaviour
                 transform.position = oldMovePointPosition.position;
                 movePoint.position = oldMovePointPosition.position;
                 break;
+
+            case State.PAUSE:
+                break;
         }
 
         if(Input.GetKey(KeyCode.R))
         {
             speed = 6f;
         }
+
+        interact.gameObject.SetActive(canInteract);
     }
 
     void Movement()
@@ -185,6 +198,7 @@ public class Game2_Character : MonoBehaviour
 
         if (collision.CompareTag("G2_End"))
         {
+            AudioManager.Instance.StopSoundtrack("Dungeon");
             LoadingScene.Instance.StartCoroutine(LoadingScene.Instance.FadeCutscene(2f, playable));
             ChangeState(State.DIALOGUE_IDLE);
         }

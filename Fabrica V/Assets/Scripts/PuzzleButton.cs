@@ -22,6 +22,7 @@ public class PuzzleButton : MonoBehaviour
         if (collision.CompareTag("Player") && !triggered)
         {
             triggered = true;
+            AudioManager.Instance.PlaySoundEffect("Button");
             anim.SetBool("isPressed", triggered);
             //sprite.color = Color.green;
             puzzleManager.buttonsNumber.Add(index);

@@ -30,6 +30,7 @@ public class DialogueSystem : MonoBehaviour
     [SerializeField] private Transform activateObject;
     [SerializeField] private Transform destroyObject;
     [SerializeField] private string selectedScene;
+    [SerializeField] private string ostName;
     [SerializeField] private bool game1; 
 
     public State contoAtual;
@@ -85,6 +86,7 @@ public class DialogueSystem : MonoBehaviour
             textGO.text = v;
             textGO.fontSize = text[positionInArray].textSize;
             textGO.color = text[positionInArray].textColor;
+            AudioManager.Instance.PlaySoundEffect("Dialogue");
             if (!xKeyPressed)
                 yield return new WaitForSeconds(text[positionInArray].textSpeed / 60);
             else
@@ -163,7 +165,11 @@ public class DialogueSystem : MonoBehaviour
             StartCoroutine(ResetInteract());
 
             if (changeScene)
-            LoadingScene.Instance.LoadScene(selectedScene);
+            {
+                LoadingScene.Instance.LoadScene(selectedScene);
+                Game2_Character.canInteract = false;
+                AudioManager.Instance.StopSoundtrack(ostName);
+            }
 
             if (destroyOnEnd)
                 Destroy(gameObject);

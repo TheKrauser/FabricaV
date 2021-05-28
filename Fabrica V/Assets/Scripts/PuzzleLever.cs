@@ -53,6 +53,7 @@ public class PuzzleLever : MonoBehaviour
         {
             on = true;
             anim.SetBool("isActive", on);
+            AudioManager.Instance.PlaySoundEffect("Lever");
             baseRender.color = Color.green;
             puzzleManager.attempt[position] = true;
             puzzleManager.CheckPuzzleLever();
@@ -61,6 +62,7 @@ public class PuzzleLever : MonoBehaviour
         {
             on = false;
             anim.SetBool("isActive", on);
+            AudioManager.Instance.PlaySoundEffect("Lever");
             baseRender.color = Color.red;
             puzzleManager.attempt[position] = false;
             puzzleManager.CheckPuzzleLever();

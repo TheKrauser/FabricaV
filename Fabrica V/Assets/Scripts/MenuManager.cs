@@ -11,18 +11,19 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private TextMeshProUGUI txtGeral, txtEfeitos, txtMusica;
     [SerializeField] private Toggle togSemSom;
-    private bool semSom;
+    public bool semSom;
 
 
     [SerializeField] private TMP_Dropdown dropResolucao, dropQualidade;
     [SerializeField] private bool telaCheia;
     Resolution[] resolucao;
 
-
-    [SerializeField] private Transform menu, opcoes, optAudio, optVideo, optControles;
+    [SerializeField] public Transform menu, opcoes, optAudio, optVideo, optControles;
 
     void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         /*txtGeral.text = (sliderGeral.value * 100).ToString() + "%";
         txtEfeitos.text = (sliderEfeitos.value * 100).ToString() + "%";
         txtMusica.text = (sliderMusica.value * 100).ToString() + "%";*/
@@ -77,11 +78,17 @@ public class MenuManager : MonoBehaviour
 
     public void MuteVolume(bool isMuted)
     {
-        //semSom = togSemSom.isOn;
+        semSom = isMuted;
         if (isMuted)
+        {
+            //PlayerPrefs.SetInt("isMuted", 0);
             AudioListener.volume = 0;
+        }
         else
+        {
+            //PlayerPrefs.SetInt("isMuted", 1);
             AudioListener.volume = 1;
+        }
 
     }
 
@@ -125,10 +132,17 @@ public class MenuManager : MonoBehaviour
     {
 
     }
+
+    public void StartGame()
+    {
+        LoadingScene.Instance.LoadScene("Casa");
+    }
+
     public void Credits()
     {
 
     }
+
     public void Quit()
     {
         Application.Quit();

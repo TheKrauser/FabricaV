@@ -60,6 +60,7 @@ public class PuzzleManager : MonoBehaviour
 
         if (guessedNumbers != 9)
         {
+            AudioManager.Instance.PlaySoundEffect("PuzzleError");
             Debug.Log("Wrong Code");
             buttonsPressed = 0;
             guessedNumbers = 0;
@@ -69,6 +70,7 @@ public class PuzzleManager : MonoBehaviour
         if (guessedNumbers == 9)
         {
             PuzzleButton.puzzleSolved = true;
+            AudioManager.Instance.PlaySoundEffect("PuzzleConfirm");
             Debug.Log("Password Correct!");
             guessedNumbers = 0;
             rightNumber = true;
@@ -103,12 +105,14 @@ public class PuzzleManager : MonoBehaviour
 
         if (rightPassword == 4)
         {
+            AudioManager.Instance.PlaySoundEffect("PuzzleConfirm");
             Debug.Log("Correct");
             PuzzleLever.puzzleSolved = true;
         }
         else
         {
-            Debug.Log("Incorrect");
+            /*AudioManager.Instance.PlaySoundEffect("PuzzleError");
+            Debug.Log("Incorrect");*/
         }
         /*
         if (levers[0] == test[0])

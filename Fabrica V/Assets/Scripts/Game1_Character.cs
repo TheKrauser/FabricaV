@@ -45,6 +45,7 @@ public class Game1_Character : MonoBehaviour
     {
         IDLE,
         DIALOGUE,
+        PAUSE,
     }
 
     private void Start()
@@ -56,10 +57,12 @@ public class Game1_Character : MonoBehaviour
         visuals = transform.Find("Visuals").GetComponent<Transform>();
         facingRight = true;
 
+        AudioManager.Instance.PlaySoundtrack("Game1");
         photonView = GetComponent<PhotonView>();
     }
     private void Update()
     {
+        //Debug.Log(rb.velocity.y);
         if (photonView!= null && !photonView.IsMine)
         {
             return;
@@ -74,7 +77,9 @@ public class Game1_Character : MonoBehaviour
                     inputJump = Input.GetKeyDown(KeyCode.Space);
 
                 if (rb.velocity.y < 0)
+                {
                     isGrounded = CheckGround();
+                }
 
                 anim.SetFloat("Speed", Mathf.Abs(x));
 
@@ -97,6 +102,9 @@ public class Game1_Character : MonoBehaviour
                 x = 0;
 
                 anim.SetFloat("Speed", 0);
+                break;
+
+            case State.PAUSE:
                 break;
         }
 
@@ -159,6 +167,7 @@ public class Game1_Character : MonoBehaviour
 
     void Jump()
     {
+        AudioManager.Instance.PlaySoundEffect("Jump");
         rb.velocity = Vector2.up * jumpForce;
         inputJump = false;
     }
@@ -178,6 +187,7 @@ public class Game1_Character : MonoBehaviour
 
         if (collision.CompareTag("Scene"))
         {
+            AudioManager.Instance.StopSoundtrack("Game1");
             LoadingScene.Instance.StartCoroutine(LoadingScene.Instance.FadeCutscene(2f, playable));
             ChangeState(State.DIALOGUE);
         }
@@ -243,6 +253,7 @@ public class Game1_Character : MonoBehaviour
 
     public void Bounce()
     {
+        AudioManager.Instance.PlaySoundEffect("Cloud");
         rb.velocity = Vector2.up * 15f;
     }
 }

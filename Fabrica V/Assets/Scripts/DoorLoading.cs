@@ -14,6 +14,7 @@ public class DoorLoading : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySoundEffect("Door");
             var playerTransform = collision.GetComponent<Transform>();
             var game2Char = collision.GetComponent<Game2_Character>();
             var movePointTransform = game2Char.movePoint;

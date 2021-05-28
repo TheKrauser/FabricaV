@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3845855403383959122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3845855403383959120}
+  - component: {fileID: 3845855403383959121}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3845855403383959120
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845855403383959122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0957756, y: 1.398424, z: -0.23398341}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3845855403383959121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3845855403383959122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853cf763af6ec6e498e726a5adb5b0e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSounds:
+  - name: Open_Book
+    clip: {fileID: 8300000, guid: 8a980f8e5d53db04eacd9dae0a95547d, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Close_Book
+    clip: {fileID: 8300000, guid: d7519eb08b52e2442946f75c36675118, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Page
+    clip: {fileID: 8300000, guid: 604888b05ba223f419897c1e6670523f, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Scene
+    clip: {fileID: 8300000, guid: 8a446621556feba4a9fe4e7189f23cb6, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Balloon
+    clip: {fileID: 8300000, guid: f9f6dff34aa4af44aaa1f96f49f25971, type: 3}
+    volume: 0.4
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Dialogue
+    clip: {fileID: 8300000, guid: 9a75d1d553d537742ba75daac79c2d4d, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: d7519eb08b52e2442946f75c36675118, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Cloud
+    clip: {fileID: 8300000, guid: aa5afae48f35c5f4183d4837e5be751f, type: 3}
+    volume: 0.45
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Cloud
+    clip: {fileID: 8300000, guid: aa5afae48f35c5f4183d4837e5be751f, type: 3}
+    volume: 0.45
+    pitch: 1
+    loop: 0
+    mixerGroup: {fileID: 160469861938964680, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  sfxAmbience: []
+  sfxSoundtrack:
+  - name: Game1
+    clip: {fileID: 8300000, guid: 956ad2f73332544fd87365087825cc4f, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    mixerGroup: {fileID: 3929655002683744144, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Game2
+    clip: {fileID: 8300000, guid: 5059413ec429c4507bb7bca2286fad19, type: 3}
+    volume: 0.08
+    pitch: 1
+    loop: 1
+    mixerGroup: {fileID: 3929655002683744144, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
+  - name: Dungeon
+    clip: {fileID: 8300000, guid: 4a4aada0ba8d8a947b54a4ac081080b4, type: 3}
+    volume: 0.07
+    pitch: 1
+    loop: 1
+    mixerGroup: {fileID: 3929655002683744144, guid: c8ab3e49d56499f489f8af94f49134dd,
+      type: 2}
+    audioS: {fileID: 0}
