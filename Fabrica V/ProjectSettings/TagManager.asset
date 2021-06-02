@@ -12,6 +12,9 @@ TagManager:
   - Chegada
   - Cinemachine
   - G2_End
+  - Light
+  - Spider
+  - Flashlight
   layers:
   - Default
   - TransparentFX
@@ -48,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: No Light
+    uniqueID: 3125778203
     locked: 0
