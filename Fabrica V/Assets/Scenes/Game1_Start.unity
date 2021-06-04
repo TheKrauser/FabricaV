@@ -454,7 +454,7 @@ PlayableDirector:
   - key: {fileID: 6744271115140343585, guid: 8b627db7e45c1e74bb5596ea085f4b11, type: 2}
     value: {fileID: 1069490584}
   - key: {fileID: -6686976348573826867, guid: 8b627db7e45c1e74bb5596ea085f4b11, type: 2}
-    value: {fileID: 182898248}
+    value: {fileID: 1918831228}
   - key: {fileID: -1158947089733483833, guid: 8b627db7e45c1e74bb5596ea085f4b11, type: 2}
     value: {fileID: 2142045651}
   m_ExposedReferences:
@@ -18928,7 +18928,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 8
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -19919,6 +19919,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1918831227}
+  - component: {fileID: 1918831229}
+  - component: {fileID: 1918831228}
   m_Layer: 0
   m_Name: Timeline
   m_TagString: Untagged
@@ -19941,6 +19943,47 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1918831228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918831226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: dcdc372b22b6e5549bb8148b2a148f9c, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1918831229}
+          m_MethodName: LoadScene
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Game1_Tree
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &1918831229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918831226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 609ddfb76419631498ff2b16ef5de592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2088648432
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class Game3_Character : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -23,15 +23,20 @@ public class Game3_Character : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         y = Input.GetAxisRaw("Vertical");
 
+        anim.SetFloat("x", x);
+        anim.SetFloat("y", y);
+
         moveDir = new Vector2(x, y);
 
         if (x != 0 || y != 0)
         {
             isWalking = true;
+            anim.SetBool("isWalking", isWalking);
         }
         else
         {
             isWalking = false;
+            anim.SetBool("isWalking", isWalking);
         }
     }
 

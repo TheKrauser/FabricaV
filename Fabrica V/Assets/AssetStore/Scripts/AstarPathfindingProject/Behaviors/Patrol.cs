@@ -22,10 +22,10 @@ namespace Pathfinding {
 		public float delay = 0;
 
 		/// <summary>Current target index</summary>
-		int index;
+		public int index;
 
 		IAstarAI agent;
-		float switchTime = float.PositiveInfinity;
+		public float switchTime = float.PositiveInfinity;
 
 		protected override void Awake () {
 			base.Awake();

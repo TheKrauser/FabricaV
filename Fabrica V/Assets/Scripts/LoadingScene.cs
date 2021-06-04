@@ -14,14 +14,25 @@ public class LoadingScene : MonoBehaviour
     public Transform blackScreen;
 
     public static LoadingScene Instance;
+
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+
     }
 
     public void LoadScene(string sceneName)

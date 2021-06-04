@@ -12,6 +12,7 @@ public class Game3_Spider : MonoBehaviour
     private Seeker seeker;
     private Patrol patrol;
     private Transform target;
+    private Animator anim;
 
     [Header("Barra de Vida")]
     [SerializeField] private Image healthBar;
@@ -39,6 +40,7 @@ public class Game3_Spider : MonoBehaviour
         seeker = GetComponent<Seeker>();
         path = GetComponent<AIPath>();
         patrol = GetComponent<Patrol>();
+        anim = GetComponentInChildren<Animator>();
 
         state = initialState;
 
@@ -64,11 +66,11 @@ public class Game3_Spider : MonoBehaviour
     void Update()
     {
 
-        if (Vector3.Distance(transform.position, target.position) < 5f && !lightStun)
+        if (Vector3.Distance(transform.position, target.position) < 4f && !lightStun)
         {
             ChangeState(State.ATTACK);
         }
-        else if (Vector3.Distance(transform.position, target.position) < 5f || lightStun)
+        else if (Vector3.Distance(transform.position, target.position) < 4f || lightStun)
         {
             ChangeState(State.PATROL);
         }
@@ -128,12 +130,21 @@ public class Game3_Spider : MonoBehaviour
     {
         destinationSetter.enabled = false;
         patrol.enabled = true;
+
+        if (patrol.switchTime == float.PositiveInfinity)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+            anim.SetBool("isWalking", false);
     }
 
     private void Chase()
     {
         destinationSetter.enabled = true;
         patrol.enabled = false;
+
+        anim.SetBool("isWalking", true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -144,6 +155,13 @@ public class Game3_Spider : MonoBehaviour
             StartCoroutine(ResetStun());
             ChangeState(State.PATROL);
         }
+
+        if (collision.CompareTag("Player"))
+        {
+            var player = collision.GetComponent<SanityManager>();
+            player.LoseSanity();
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator ResetStun()
@@ -151,7 +169,6 @@ public class Game3_Spider : MonoBehaviour
         yield return new WaitForSeconds(8);
         lightStun = false;
     }
-
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.CompareTag("Flashlight"))
