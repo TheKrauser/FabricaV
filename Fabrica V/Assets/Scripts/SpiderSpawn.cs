@@ -7,6 +7,7 @@ public class SpiderSpawn : MonoBehaviour
     [SerializeField] private float xMin, xMax, yMin, yMax;
     [SerializeField] private GameObject spider;
     private bool canSpawn = true;
+    private float spawnRate = 3f;
     void Start()
     {
         
@@ -14,7 +15,7 @@ public class SpiderSpawn : MonoBehaviour
 
     void Update()
     {
-        StartCoroutine(Spawn(2f));
+        StartCoroutine(Spawn(spawnRate));
     }
 
     private IEnumerator Spawn(float timer)
@@ -22,6 +23,7 @@ public class SpiderSpawn : MonoBehaviour
         if (canSpawn)
         {
             canSpawn = false;
+            spawnRate -= 0.05f;
 
             int c = Random.Range(0, 3);
 

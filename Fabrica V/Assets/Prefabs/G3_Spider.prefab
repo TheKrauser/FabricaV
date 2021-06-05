@@ -68,7 +68,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 9116227723423939831}
   health: 100
-  initialState: 0
+  patrolPoints: []
+  initialState: 2
 --- !u!50 &126533267311413963
 Rigidbody2D:
   serializedVersion: 4

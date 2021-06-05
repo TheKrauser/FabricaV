@@ -65,32 +65,35 @@ public class Game3_Spider : MonoBehaviour
 
     void Update()
     {
-
-        if (Vector3.Distance(transform.position, target.position) < 4f && !lightStun)
-        {
-            ChangeState(State.ATTACK);
-        }
-        else if (Vector3.Distance(transform.position, target.position) < 4f || lightStun)
-        {
-            ChangeState(State.PATROL);
-        }
-
         switch (state)
         {
             case State.ATTACK:
+
+                if (Vector3.Distance(transform.position, target.position) < 4f || lightStun)
+                {
+                    ChangeState(State.PATROL);
+                }
+
                 Chase();
                 break;
 
             case State.PATROL:
+                if (Vector3.Distance(transform.position, target.position) < 4f && !lightStun)
+                {
+                    ChangeState(State.ATTACK);
+                }
+
                 Patrol();
                 break;
 
             case State.HORDE:
+                anim.SetBool("isWalking", true);
+
                 if (!takeDamage)
                 {
-                    if (health < 100)
+                    if (health < 100 && health > 0)
                     {
-                        health += 3f;
+                        health += 10 * Time.deltaTime;
                         healthBar.fillAmount = health / 100;
                     }
                     if (health > 100)
@@ -98,12 +101,6 @@ public class Game3_Spider : MonoBehaviour
                         health = 100;
                         healthBar.fillAmount = health / 100;
                     }
-                }
-
-                if (health <= 0)
-                {
-                    health = 0;
-                    Destroy(gameObject);
                 }
                 break;
         }
@@ -159,7 +156,9 @@ public class Game3_Spider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             var player = collision.GetComponent<SanityManager>();
-            player.LoseSanity();
+            if (player != null) player.LoseSanity();
+
+            Application.Quit();
             Destroy(gameObject);
         }
     }
@@ -174,8 +173,14 @@ public class Game3_Spider : MonoBehaviour
         if (collision.CompareTag("Flashlight"))
         {
             takeDamage = true;
-            health -= 5;
+            health -= 10 * Time.deltaTime;
             healthBar.fillAmount = health / 100;
+
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 

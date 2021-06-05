@@ -52,4 +52,12 @@ public class Game3_Character : MonoBehaviour
     {
         rb.velocity = moveDir * speed * Time.fixedDeltaTime;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Door"))
+        {
+            LoadingScene.Instance.LoadScene("Game3_Room");
+        }
+    }
 }

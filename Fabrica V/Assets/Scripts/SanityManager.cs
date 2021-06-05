@@ -13,6 +13,7 @@ public class SanityManager : MonoBehaviour
     [SerializeField] private Image sanityBar;
     [SerializeField] private Image fearBar;
     [SerializeField] private Transform respawn;
+    [SerializeField] private float sanityDecreaseRate, fearIncreaseRate;
 
     public bool outsideLight;
     private bool scared;
@@ -21,6 +22,8 @@ public class SanityManager : MonoBehaviour
     {
         sanity = sanityMax;
         fear = 0;
+
+        outsideLight = false;
 
         sanityBar.fillAmount = sanity;
         fearBar.fillAmount = fear;
@@ -34,7 +37,7 @@ public class SanityManager : MonoBehaviour
         {
             if (fear < 100)
             {
-                fear += 1.0f;
+                fear += fearIncreaseRate  * Time.deltaTime;
                 if (fear > 100)
                     fear = 100;
             }
@@ -47,14 +50,14 @@ public class SanityManager : MonoBehaviour
         if (!outsideLight)
         {
             scared = false;
-            fear -= 0.8f;
+            fear -= fearIncreaseRate  * Time.deltaTime;
             if (fear < 0)
                 fear = 0;
         }
         
         if (scared)
         {
-            sanity -= 0.2f;
+            sanity -= sanityDecreaseRate * Time.deltaTime;
 
             if (sanity <= 0)
                 Respawn();
