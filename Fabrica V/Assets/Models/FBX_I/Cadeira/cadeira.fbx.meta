@@ -13,7 +13,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: madeira_clara
-    second: {fileID: 2100000, guid: 4f122fa593315b442a4f9d402b700e1c, type: 2}
+    second: {fileID: 2100000, guid: 822f256d2c90fad4bba34b2571732590, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: papelao
-    second: {fileID: 2100000, guid: 13949c829427d6f4ebea7d68e53bbfaa, type: 2}
+    second: {fileID: 2100000, guid: 482f30a3cb2b2e240acc193879637778, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
