@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,7 +37,7 @@ public class SanityManager : MonoBehaviour
         {
             if (fear < 100)
             {
-                fear += fearIncreaseRate  * Time.deltaTime;
+                fear += fearIncreaseRate * Time.deltaTime;
                 if (fear > 100)
                     fear = 100;
             }
@@ -50,11 +50,11 @@ public class SanityManager : MonoBehaviour
         if (!outsideLight)
         {
             scared = false;
-            fear -= fearIncreaseRate  * Time.deltaTime;
+            fear -= fearIncreaseRate * Time.deltaTime;
             if (fear < 0)
                 fear = 0;
         }
-        
+
         if (scared)
         {
             sanity -= sanityDecreaseRate * Time.deltaTime;
@@ -94,7 +94,15 @@ public class SanityManager : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D collider)
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Light"))
+        {
+            outsideLight = false;
+        }
+    }
+
+    /*void OnTriggerStay2D(Collider2D collider)
     {
         if (collider.CompareTag("Light"))
         {
@@ -102,5 +110,5 @@ public class SanityManager : MonoBehaviour
         }
         else
             outsideLight = true;
-    }
+    }*/
 }

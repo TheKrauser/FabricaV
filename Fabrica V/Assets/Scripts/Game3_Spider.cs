@@ -69,7 +69,7 @@ public class Game3_Spider : MonoBehaviour
         {
             case State.ATTACK:
 
-                if (Vector3.Distance(transform.position, target.position) < 4f || lightStun)
+                if (Vector3.Distance(transform.position, target.position) < 5f || lightStun)
                 {
                     ChangeState(State.PATROL);
                 }
@@ -78,7 +78,7 @@ public class Game3_Spider : MonoBehaviour
                 break;
 
             case State.PATROL:
-                if (Vector3.Distance(transform.position, target.position) < 4f && !lightStun)
+                if (Vector3.Distance(transform.position, target.position) < 5f && !lightStun)
                 {
                     ChangeState(State.ATTACK);
                 }
@@ -148,6 +148,7 @@ public class Game3_Spider : MonoBehaviour
     {
         if (collision.CompareTag("Light"))
         {
+            //AudioManager.Instance.PlaySoundEffect("Spider");
             lightStun = true;
             StartCoroutine(ResetStun());
             ChangeState(State.PATROL);
@@ -173,12 +174,14 @@ public class Game3_Spider : MonoBehaviour
         if (collision.CompareTag("Flashlight"))
         {
             takeDamage = true;
-            health -= 10 * Time.deltaTime;
+            health -= 100 * Time.deltaTime;
             healthBar.fillAmount = health / 100;
 
 
             if (health <= 0)
             {
+                AudioManager.Instance.PlaySoundEffect("Spider");
+                SpiderSpawn.spidersKilled++;
                 Destroy(gameObject);
             }
         }
