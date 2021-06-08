@@ -1,8 +1,9 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class CharacterManager : MonoBehaviour
 {
@@ -11,14 +12,36 @@ public class CharacterManager : MonoBehaviour
     private OutlineShader selectionOutline;
     private OutlineShader oldSelection;
 
+    [SerializeField] private PlayableDirector initialCutscene;
+
     private void Awake()
     {
         firstPerson = GetComponent<FirstPersonAIO>();
+        playerCamera = firstPerson.playerCamera;
+
+        if (PlayerPrefs.GetInt("HasSavedGame", 0) == 1)
+        {
+            float playerX = PlayerPrefs.GetFloat("PositionX");
+            float playerY = PlayerPrefs.GetFloat("PositionY");
+            float playerZ = PlayerPrefs.GetFloat("PositionZ");
+
+            //float cameraX = PlayerPrefs.GetFloat("CameraX");
+            //float cameraY = PlayerPrefs.GetFloat("CameraY");
+            //float cameraZ = PlayerPrefs.GetFloat("CameraZ");
+
+            transform.position = new Vector3(playerX, playerY, playerZ);
+            //playerCamera.transform.localRotation = new Quaternion(cameraX, cameraY, cameraZ, 0);
+        }
+
+        else
+        {
+            initialCutscene.Play();
+        }
     }
 
     void Start()
     {
-        playerCamera = firstPerson.playerCamera;
+
     }
 
     void Update()

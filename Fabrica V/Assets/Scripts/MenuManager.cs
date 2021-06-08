@@ -233,6 +233,11 @@ public class MenuManager : MonoBehaviour
 
     }
 
+    public void Reset()
+    {
+        PlayerPrefs.SetInt("HasSavedGame", 0);
+    }
+
     public void Quit()
     {
         Application.Quit();

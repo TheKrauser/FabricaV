@@ -35,6 +35,11 @@ public class BookUI : MonoBehaviour
             {
                 isLoading = true;
                 AudioManager.Instance.PlaySoundEffect("Scene");
+                PlayerPrefs.SetInt("HasSavedGame", 1);
+                var player = GameObject.FindGameObjectWithTag("Player").transform;
+                PlayerPrefs.SetFloat("PositionX", player.position.x);
+                PlayerPrefs.SetFloat("PositionY", player.position.y);
+                PlayerPrefs.SetFloat("PositionZ", player.position.z);
                 LoadingScene.Instance.LoadScene(sceneToLoad);
             }
         }

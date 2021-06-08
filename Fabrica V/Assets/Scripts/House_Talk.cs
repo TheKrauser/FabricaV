@@ -22,6 +22,7 @@ public class House_Talk : MonoBehaviour
     [SerializeField] private bool destroyOnEnd;
 
     [SerializeField] private bool cutscene;
+    [SerializeField] private FirstPersonAIO fp;
 
     void Start()
     {
@@ -52,6 +53,12 @@ public class House_Talk : MonoBehaviour
         //Debug.Log(positionInArray);
         if (scene != null)
             scene.playableGraph.GetRootPlayable(0).SetSpeed(0);
+
+        if (!cutscene)
+        {
+            fp.playerCanMove = false;
+            fp.enableCameraMovement = false;
+        }
 
         majorDialogueGO.SetActive(true);
         canSkipDialogue = false;
@@ -94,7 +101,8 @@ public class House_Talk : MonoBehaviour
 
             if (!cutscene)
             {
-                //var fp = GameObject.FindGameObjectWithTag("Player").GetComponent<FirstPersonAIO>();
+                fp.playerCanMove = true;
+                fp.enableCameraMovement = true;
             }
         }
     }
