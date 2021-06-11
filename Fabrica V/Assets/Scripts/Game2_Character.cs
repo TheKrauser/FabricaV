@@ -43,6 +43,8 @@ public class Game2_Character : MonoBehaviour
         canInteract = false;
 
         state = State.IDLE;
+
+        PrefsManager.SetConto(2);
     }
 
     void Update()
@@ -73,10 +75,11 @@ public class Game2_Character : MonoBehaviour
                 break;
         }
 
-        if(Input.GetKey(KeyCode.R))
-        {
-            speed = 6f;
-        }
+        //Player mais rapido pra passar o conto em menos tempo
+        //if(Input.GetKey(KeyCode.R))
+        //{
+        //    speed = 6f;
+        //}
 
         interact.gameObject.SetActive(canInteract);
     }

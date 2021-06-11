@@ -13,6 +13,9 @@ public class CharacterManager : MonoBehaviour
     private OutlineShader oldSelection;
 
     [SerializeField] private PlayableDirector initialCutscene;
+    [SerializeField] private GameObject dialogue1, dialogue2, dialogue3, dialogue4;
+    [SerializeField] private Transform livro1, livro2, livro3;
+    private bool ended;
 
     private void Awake()
     {
@@ -32,11 +35,47 @@ public class CharacterManager : MonoBehaviour
             transform.position = new Vector3(playerX, playerY, playerZ);
             //playerCamera.transform.localRotation = new Quaternion(cameraX, cameraY, cameraZ, 0);
         }
-
         else
         {
             initialCutscene.Play();
         }
+
+        if (PlayerPrefs.GetInt("Conto1Completado") == 1 &&
+             PlayerPrefs.GetInt("Conto2Completado") == 1 &&
+                PlayerPrefs.GetInt("Conto3Completado") == 1)
+        {
+            ended = true;
+        }
+        else
+            ended = false;
+
+        if (PlayerPrefs.GetInt("Conto1Completado") == 1)
+            livro1.gameObject.SetActive(false);
+
+        if (PlayerPrefs.GetInt("Conto2Completado") == 1)
+            livro2.gameObject.SetActive(false);
+
+        if (PlayerPrefs.GetInt("Conto3Completado") == 1)
+            livro3.gameObject.SetActive(false);
+
+
+        if (PlayerPrefs.GetInt("Conto", 0) == 1 && !ended)
+        {
+            StartCoroutine(Delay(dialogue1, 0.2f));
+        }
+
+        if (PlayerPrefs.GetInt("Conto", 0) == 2 && !ended)
+        {
+            StartCoroutine(Delay(dialogue2, 0.2f));
+        }
+
+        if (PlayerPrefs.GetInt("Conto", 0) == 3 && !ended)
+        {
+            StartCoroutine(Delay(dialogue3, 0.2f));
+        }
+
+        if (ended)
+            StartCoroutine(Delay(dialogue4, 0.2f));
     }
 
     void Start()
@@ -46,6 +85,7 @@ public class CharacterManager : MonoBehaviour
 
     void Update()
     {
+        firstPerson.mouseSensitivity = PlayerPrefs.GetFloat("Sensibilidade", 3f);
         Ray ray = playerCamera.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
@@ -81,6 +121,12 @@ public class CharacterManager : MonoBehaviour
                         }
                     }
 
+                    else if (selection.GetComponent<DoorEnd>() != null && ended)
+                    {
+                        var doorEnd = selection.GetComponent<DoorEnd>();
+                        doorEnd.EndGame();
+                    }
+
                     else
                         return;
                 }
@@ -113,5 +159,11 @@ public class CharacterManager : MonoBehaviour
                 oldSelection.enabled = false;
             }
         }
+    }
+
+    private IEnumerator Delay(GameObject obj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        obj.SetActive(true);
     }
 }

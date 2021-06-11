@@ -16,6 +16,10 @@ TagManager:
   - Spider
   - Flashlight
   - Door
+  - FxTemporaire
+  - Enemy
+  - Cabana
+  - Pause
   layers:
   - Default
   - TransparentFX

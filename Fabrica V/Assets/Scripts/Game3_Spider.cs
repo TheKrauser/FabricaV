@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game3_Spider : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class Game3_Spider : MonoBehaviour
             case State.HORDE:
                 healthBar.fillAmount = health / 100;
 
-                target = GameObject.FindGameObjectWithTag("Player").transform;
+                target = GameObject.FindGameObjectWithTag("Cabana").transform;
                 destinationSetter.target = target;
                 path.maxSpeed = Random.Range(1, 1.5f);
                 break;
@@ -159,7 +160,15 @@ public class Game3_Spider : MonoBehaviour
             var player = collision.GetComponent<SanityManager>();
             if (player != null) player.LoseSanity();
 
-            Application.Quit();
+            Destroy(gameObject);
+        }
+
+        if (collision.CompareTag("Cabana"))
+        {
+            if (SpiderSpawn.playerCanLose)
+            {
+                SceneManager.LoadScene("Game3_Room");
+            }
             Destroy(gameObject);
         }
     }
@@ -174,7 +183,7 @@ public class Game3_Spider : MonoBehaviour
         if (collision.CompareTag("Flashlight"))
         {
             takeDamage = true;
-            health -= 100 * Time.deltaTime;
+            health -= 110 * Time.deltaTime;
             healthBar.fillAmount = health / 100;
 
 

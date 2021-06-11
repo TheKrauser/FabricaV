@@ -864,6 +864,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading
       objectReference: {fileID: 0}
+    - target: {fileID: 6158115871035704622, guid: d9e1212391ea97e43a3b94cf87e022a0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158115871035704622, guid: d9e1212391ea97e43a3b94cf87e022a0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158115871035704622, guid: d9e1212391ea97e43a3b94cf87e022a0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e1212391ea97e43a3b94cf87e022a0, type: 3}
 --- !u!1 &182898246 stripped
@@ -18867,6 +18882,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 822719547}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1312518968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1312518971}
+  - component: {fileID: 1312518970}
+  - component: {fileID: 1312518969}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1312518969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312518968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1312518970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312518968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &1312518971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312518968}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 29
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1367183262 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 994045292439174959, guid: 797209e9e021c854d866fbe920638c32,
@@ -18928,7 +19009,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -20426,7 +20507,7 @@ MonoBehaviour:
   sfxAmbience:
   - name: Birds
     clip: {fileID: 8300000, guid: 7b2235d524609214c81739f2c308834d, type: 3}
-    volume: 0.6
+    volume: 0.1
     pitch: 0.9
     loop: 1
     mixerGroup: {fileID: 1126328272109410706, guid: c8ab3e49d56499f489f8af94f49134dd,
@@ -21066,7 +21147,7 @@ MonoBehaviour:
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
   - sentence: ...
-    textSpeed: 45
+    textSpeed: 3.5
     delayToNext: 4
     textSize: 20
     imageCharacter: {fileID: 6783696417705810119, guid: 6d4fff4868a49f04aa30a128beabe203,

@@ -4333,6 +4333,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Loading
       objectReference: {fileID: 0}
+    - target: {fileID: 6158115871035704622, guid: d9e1212391ea97e43a3b94cf87e022a0,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158115871035704622, guid: d9e1212391ea97e43a3b94cf87e022a0,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6158115871035704622, guid: d9e1212391ea97e43a3b94cf87e022a0,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e1212391ea97e43a3b94cf87e022a0, type: 3}
 --- !u!1 &698333432
@@ -8799,7 +8814,7 @@ MonoBehaviour:
     imageCharacter: {fileID: 5941210440410366596, guid: a3edfea2d31b3504280ce89dc5073e9b,
       type: 3}
     textColor: {r: 0, g: 0, b: 0, a: 1}
-  - sentence: Ta ta... :3
+  - sentence: Ta ta...
     textSpeed: 1
     delayToNext: 4
     textSize: 20

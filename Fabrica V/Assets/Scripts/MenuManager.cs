@@ -6,12 +6,13 @@ using TMPro;
 using UnityEngine.Audio;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private Slider sliderGeral, sliderEfeitos, sliderMusica;
+    [SerializeField] private Slider sliderGeral, sliderEfeitos, sliderMusica, sliderSensibilidade;
     [SerializeField] private AudioMixer audioMixer;
-    [SerializeField] private TextMeshProUGUI txtGeral, txtEfeitos, txtMusica;
+    [SerializeField] private TextMeshProUGUI txtGeral, txtEfeitos, txtMusica, txtSensibilidade;
     [SerializeField] private Toggle togSemSom, togTelaCheia;
     public bool semSom;
 
@@ -21,10 +22,12 @@ public class MenuManager : MonoBehaviour
     Resolution[] resolucao;
 
     [SerializeField] public Transform menu, opcoes, optAudio, optVideo, optControles;
+    [SerializeField] public Transform ajuda; 
 
     private int telaCheiaInt, semSomInt;
 
     [SerializeField] private bool dontDestroy;
+    [SerializeField] private Image antiRaycast;
 
     void Awake()
     {
@@ -82,7 +85,7 @@ public class MenuManager : MonoBehaviour
 
         dropQualidade.value = PlayerPrefs.GetInt("Quality", 3);
 
-        resolucao = Screen.resolutions;
+        resolucao = Screen.resolutions.Select(resolucao => new Resolution { width = resolucao.width, height = resolucao.height }).Distinct().ToArray();
         dropResolucao.ClearOptions();
 
         List<string> opcoesResolucao = new List<string>();
@@ -129,6 +132,13 @@ public class MenuManager : MonoBehaviour
         txtMusica.text = Mathf.RoundToInt(value).ToString() + "%";
     }
 
+    public void UpdateSensitivity(float sens)
+    {
+        PlayerPrefs.SetFloat("Sensibilidade", sens);
+        float value = sliderSensibilidade.value;
+        txtSensibilidade.text = value.ToString();
+    }
+
     public void UpdateSounds()
     {
         float efeitos = PlayerPrefs.GetFloat("VolumeEfeitos", 0.6f);
@@ -145,6 +155,10 @@ public class MenuManager : MonoBehaviour
         audioMixer.SetFloat("MasterVolume", Mathf.Log10(geral) * 20);
         sliderGeral.value = geral;
         txtGeral.text = Mathf.RoundToInt(sliderGeral.value * 100).ToString() + "%";
+
+        float sensibilidade = PlayerPrefs.GetFloat("Sensibilidade", 3f);
+        sliderSensibilidade.value = sensibilidade;
+        txtSensibilidade.text = sliderSensibilidade.value.ToString();
     }
 
     public void MuteVolume(bool isMuted)
@@ -213,6 +227,18 @@ public class MenuManager : MonoBehaviour
         active.gameObject.SetActive(true);
     }
 
+    public void TransitionHelp(Transform active)
+    {
+        ajuda.gameObject.SetActive(false);
+        active.gameObject.SetActive(true);
+    }
+
+    public void BackHelp(Transform disable)
+    {
+        disable.gameObject.SetActive(false);
+        ajuda.gameObject.SetActive(true);
+    }
+
     public void SaveOptions()
     {
 
@@ -225,21 +251,33 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        antiRaycast.gameObject.SetActive(true);
         LoadingScene.Instance.LoadScene("Casa");
     }
 
     public void Credits()
     {
-
+        LoadingScene.Instance.LoadScene("Credits");
     }
 
     public void Reset()
     {
         PlayerPrefs.SetInt("HasSavedGame", 0);
+        PlayerPrefs.SetInt("Conto", 0);
+        PlayerPrefs.SetInt("Conto1Completado", 0);
+        PlayerPrefs.SetInt("Conto2Completado", 0);
+        PlayerPrefs.SetInt("Conto3Completado", 0);
+        PlayerPrefs.Save();
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    private IEnumerator ResetRaycast()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        antiRaycast.gameObject.SetActive(false);
     }
 }

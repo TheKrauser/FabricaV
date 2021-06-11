@@ -8,12 +8,81 @@ ShaderVariantCollection:
   m_PrefabAsset: {fileID: 0}
   m_Name: NewShaderVariants
   m_Shaders:
+  - first: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: ETC1_EXTERNAL_ALPHA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+          _DEPTH_NO_MSAA
+        passType: 0
   - first: {fileID: 10770, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
       - keywords: 
         passType: 0
-      - keywords: LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON UNITY_UI_ALPHACLIP _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_UI_ALPHACLIP _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 0
   - first: {fileID: 66, guid: 0000000000000000f000000000000000, type: 0}
     second:
@@ -25,14 +94,55 @@ ShaderVariantCollection:
       variants:
       - keywords: 
         passType: 8
+  - first: {fileID: 103, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
   - first: {fileID: 106, guid: 0000000000000000f000000000000000, type: 0}
     second:
       variants:
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
+        passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION
           _MAIN_LIGHT_SHADOWS
         passType: 0
+      - keywords: _DEPTH_NO_MSAA _SUNDISK_SIMPLE
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA _SUNDISK_SIMPLE
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _SUNDISK_SIMPLE
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _SUNDISK_SIMPLE
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA _SUNDISK_SIMPLE
+        passType: 0
+      - keywords: _SUNDISK_HIGH_QUALITY
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
+          _SUNDISK_HIGH_QUALITY
+        passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION
           _MAIN_LIGHT_SHADOWS _SUNDISK_HIGH_QUALITY
+        passType: 0
+  - first: {fileID: 108, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 207, guid: 0000000000000000f000000000000000, type: 0}
+    second:
+      variants:
+      - keywords: 
         passType: 0
   - first: {fileID: 9000, guid: 0000000000000000f000000000000000, type: 0}
     second:
@@ -77,45 +187,139 @@ ShaderVariantCollection:
   - first: {fileID: 4800000, guid: 65df88701913c224d95fc554db28381a, type: 3}
     second:
       variants:
-      - keywords: 
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
         passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 0
-  - first: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 0
+  - first: {fileID: 4800000, guid: 0e9d5a909a1f7e84882a534d0d11e49f, type: 3}
     second:
       variants:
-      - keywords: 
-        passType: 0
-      - keywords: USE_SHAPE_LIGHT_TYPE_0
-        passType: 0
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
-        passType: 0
-  - first: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-    second:
-      variants:
-      - keywords: 
-        passType: 8
-      - keywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+      - keywords: INSTANCING_ON
         passType: 8
       - keywords: 
         passType: 13
       - keywords: _ADDITIONAL_LIGHTS
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS
+  - first: {fileID: 4800000, guid: 6dad35c0b62e44c26ab244ad80deee1a, type: 3}
+    second:
+      variants:
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+  - first: {fileID: 4800000, guid: c17132b1f77d20942aa75f8429c0f8bc, type: 3}
+    second:
+      variants:
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+  - first: {fileID: 4800000, guid: e35a31e1679aeff489e202f5cc4853d5, type: 3}
+    second:
+      variants:
+      - keywords: USE_ADDITIVE_BLENDING USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+  - first: {fileID: 4800000, guid: 4e76d4023d7e0411297c670f878973e2, type: 3}
+    second:
+      variants:
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+  - first: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+    second:
+      variants:
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: 
+        passType: 8
+      - keywords: _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+        passType: 8
+      - keywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 8
+      - keywords: _ALPHATEST_ON _SPECULAR_SETUP
+        passType: 8
+      - keywords: 
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
         passType: 13
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
-          _DEPTH_NO_MSAA
+      - keywords: _ADDITIONAL_LIGHTS _EMISSION _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
         passType: 13
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 13
       - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
           _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION
+          _MAIN_LIGHT_SHADOWS
         passType: 13
       - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
           _MAIN_LIGHT_SHADOWS
@@ -123,9 +327,43 @@ ShaderVariantCollection:
       - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
           _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 13
-      - keywords: _ADDITIONAL_LIGHTS _EMISSION _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _EMISSION _MAIN_LIGHT_SHADOWS
         passType: 13
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _NORMALMAP
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS _NORMALMAP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS
+          _NORMALMAP
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _NORMALMAP
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _NORMALMAP
+        passType: 13
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS _NORMALMAP
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _METALLICSPECGLOSSMAP
+          _NORMALMAP _OCCLUSIONMAP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _EMISSION _MAIN_LIGHT_SHADOWS
+          _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _EMISSION _MAIN_LIGHT_SHADOWS _METALLICSPECGLOSSMAP
+          _NORMALMAP _OCCLUSIONMAP
+        passType: 13
+      - keywords: _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS _METALLICSPECGLOSSMAP
+          _NORMALMAP _OCCLUSIONMAP
+        passType: 13
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS _METALLICSPECGLOSSMAP
+          _NORMALMAP _OCCLUSIONMAP
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
+          _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
           _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
         passType: 13
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION
@@ -134,40 +372,75 @@ ShaderVariantCollection:
       - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
           _EMISSION _MAIN_LIGHT_SHADOWS _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
         passType: 13
-      - keywords: _ALPHAPREMULTIPLY_ON
+      - keywords: _ADDITIONAL_LIGHTS _ALPHAPREMULTIPLY_ON _EMISSION _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _ALPHAPREMULTIPLY_ON _DEPTH_NO_MSAA _EMISSION
+          _MAIN_LIGHT_SHADOWS
         passType: 13
       - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _ALPHAPREMULTIPLY_ON
-          _EMISSION
+          _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ALPHAPREMULTIPLY_ON
-          _DEPTH_NO_MSAA _EMISSION
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _ALPHAPREMULTIPLY_ON _DEPTH_NO_MSAA
+          _EMISSION _MAIN_LIGHT_SHADOWS
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
-          _ALPHAPREMULTIPLY_ON _DEPTH_NO_MSAA _EMISSION
-        passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
           _ALPHAPREMULTIPLY_ON _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
-          _ADDITIONAL_LIGHTS _ALPHAPREMULTIPLY_ON _DEPTH_NO_MSAA _EMISSION _MAIN_LIGHT_SHADOWS
+      - keywords: _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
         passType: 13
-      - keywords: _ADDITIONAL_LIGHTS _EMISSION _ENVIRONMENTREFLECTIONS_OFF _METALLICSPECGLOSSMAP
-          _NORMALMAP _OCCLUSIONMAP
+      - keywords: _ADDITIONAL_LIGHTS _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _ENVIRONMENTREFLECTIONS_OFF
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _EMISSION _ENVIRONMENTREFLECTIONS_OFF
+          _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _ENVIRONMENTREFLECTIONS_OFF _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _ENVIRONMENTREFLECTIONS_OFF
+          _MAIN_LIGHT_SHADOWS
         passType: 13
       - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _EMISSION _ENVIRONMENTREFLECTIONS_OFF
+          _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _ENVIRONMENTREFLECTIONS_OFF
+          _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+          _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _ENVIRONMENTREFLECTIONS_OFF
+          _MAIN_LIGHT_SHADOWS
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _ENVIRONMENTREFLECTIONS_OFF
           _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _EMISSION _ENVIRONMENTREFLECTIONS_OFF
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _EMISSION _ENVIRONMENTREFLECTIONS_OFF
           _MAIN_LIGHT_SHADOWS _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
         passType: 13
-      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
-          _EMISSION _ENVIRONMENTREFLECTIONS_OFF _MAIN_LIGHT_SHADOWS _METALLICSPECGLOSSMAP
-          _NORMALMAP _OCCLUSIONMAP
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _EMISSION _ENVIRONMENTREFLECTIONS_OFF _MAIN_LIGHT_SHADOWS
+          _METALLICSPECGLOSSMAP _NORMALMAP _OCCLUSIONMAP
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _SPECULAR_SETUP
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _SPECULAR_SETUP
         passType: 13
-      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
-          _DEPTH_NO_MSAA _SPECULAR_SETUP
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
+        passType: 13
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
         passType: 13
       - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
           _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
@@ -178,49 +451,129 @@ ShaderVariantCollection:
       - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
           _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
         passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _ALPHATEST_ON _SPECULAR_SETUP
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _ALPHATEST_ON _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _ALPHATEST_ON
+          _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
+        passType: 13
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _ALPHATEST_ON
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _SPECULAR_SETUP
+        passType: 13
+      - keywords: _ADDITIONAL_LIGHTS _NORMALMAP _SPECULAR_SETUP
+        passType: 13
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS
+          _NORMALMAP _SPECULAR_SETUP
+        passType: 13
+  - first: {fileID: 4800000, guid: c84d57d423a2042eb92da86f9fa670a3, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: 6f37d9e45fbae41b386f76d3bfefec4a, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+  - first: {fileID: 4800000, guid: c7d04ca57e5449d49ad9cee1c604bc26, type: 3}
+    second:
+      variants:
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
   - first: {fileID: 4800000, guid: e260cfa7296ee7642b167f1eb5be5023, type: 3}
     second:
       variants:
       - keywords: ETC1_EXTERNAL_ALPHA UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
         passType: 0
+      - keywords: 
+        passType: 13
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH _DEPTH_NO_MSAA
+        passType: 13
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 13
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 13
+      - keywords: ETC1_EXTERNAL_ALPHA LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0
+          _DEPTH_NO_MSAA
+        passType: 13
   - first: {fileID: 4800000, guid: 4293210a3280c4283b9872316017f1f9, type: 3}
     second:
       variants:
       - keywords: 
         passType: 0
-      - keywords: USE_SHAPE_LIGHT_TYPE_0
+      - keywords: _DEPTH_NO_MSAA
         passType: 0
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
         passType: 0
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
         passType: 0
       - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
           _MAIN_LIGHT_SHADOWS
         passType: 0
-  - first: {fileID: 4800000, guid: 1ccecd9b89b8a4f14bfb64f29ddfcc81, type: 3}
+  - first: {fileID: 4800000, guid: 341b058cd7dee4f5cba5cc59a513619e, type: 3}
     second:
       variants:
-      - keywords: 
-        passType: 8
-      - keywords: SHADOWS_DEPTH
-        passType: 8
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: DIRLIGHTMAP_COMBINED LIGHTMAP_ON UNITY_HDR_ON _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+          _MAIN_LIGHT_SHADOWS
+        passType: 0
   - first: {fileID: 4800000, guid: e6e9a19c3678ded42a3bc431ebef7dbd, type: 3}
     second:
       variants:
       - keywords: 
         passType: 0
-      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
-        passType: 0
-      - keywords: USE_SHAPE_LIGHT_TYPE_0
-        passType: 0
   - first: {fileID: 4800000, guid: e7857e9d0c934dc4f83f270f8447b006, type: 3}
     second:
       variants:
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
         passType: 0
       - keywords: _BLOOM_LQ _TONEMAP_ACES
         passType: 0
+      - keywords: UNITY_HDR_ON _BLOOM_LQ _DEPTH_NO_MSAA _TONEMAP_ACES
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _BLOOM_LQ _MAIN_LIGHT_SHADOWS _TONEMAP_ACES
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _BLOOM_LQ _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _TONEMAP_ACES
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _BLOOM_LQ _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+          _TONEMAP_ACES
+        passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _BLOOM_LQ _DEPTH_NO_MSAA _TONEMAP_ACES
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _BLOOM_LQ _DEPTH_NO_MSAA _TONEMAP_ACES
         passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _BLOOM_LQ _DEPTH_NO_MSAA
           _MAIN_LIGHT_SHADOWS _TONEMAP_ACES
@@ -230,14 +583,49 @@ ShaderVariantCollection:
       variants:
       - keywords: 
         passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
         passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+  - first: {fileID: 4800000, guid: 6c78a6dd468954643a87ebf0014bc305, type: 3}
+    second:
+      variants:
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
         passType: 0
   - first: {fileID: 4800000, guid: d6dae50ee9e1bfa4db75f19f99355220, type: 3}
     second:
       variants:
-      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
         passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 0
@@ -247,8 +635,50 @@ ShaderVariantCollection:
   - first: {fileID: 4800000, guid: 63eaba0ebfb82cc43bde059b4a8c65f6, type: 3}
     second:
       variants:
-      - keywords: _SMAA_PRESET_HIGH
+      - keywords: _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _SMAA_PRESET_HIGH
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS _SMAA_PRESET_HIGH
         passType: 0
       - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
           _SMAA_PRESET_HIGH
+        passType: 0
+  - first: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON USE_SHAPE_LIGHT_TYPE_0 _ADDITIONAL_LIGHTS
+          _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+  - first: {fileID: 4800000, guid: fe393ace9b354375a9cb14cdbbc28be4, type: 3}
+    second:
+      variants:
+      - keywords: 
+        passType: 0
+      - keywords: _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: LIGHTPROBE_SH UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA
+        passType: 0
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+  - first: {fileID: 4800000, guid: 77cfa04f893eb8745b6a454a3d51b43c, type: 3}
+    second:
+      variants:
+      - keywords: _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
+        passType: 0
+      - keywords: UNITY_HDR_ON _ADDITIONAL_LIGHTS _DEPTH_NO_MSAA _MAIN_LIGHT_SHADOWS
         passType: 0

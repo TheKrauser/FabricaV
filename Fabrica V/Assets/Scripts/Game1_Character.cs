@@ -57,6 +57,8 @@ public class Game1_Character : MonoBehaviour
         visuals = transform.Find("Visuals").GetComponent<Transform>();
         facingRight = true;
 
+        PrefsManager.SetConto(1);
+
         AudioManager.Instance.PlaySoundtrack("Game1");
         photonView = GetComponent<PhotonView>();
     }
@@ -67,6 +69,7 @@ public class Game1_Character : MonoBehaviour
         {
             return;
         }
+
         switch (state)
         {
             case State.IDLE:
@@ -152,10 +155,11 @@ public class Game1_Character : MonoBehaviour
                     Jump();
                 }
 
-                if (Input.GetKeyDown(KeyCode.O))
-                {
-                    transform.position = new Vector2(-12.5f, 63f);
-                }
+                //Chegar no final mais rapidamente
+                //if (Input.GetKeyDown(KeyCode.O))
+                //{
+                //    transform.position = new Vector2(-12.5f, 63f);
+                //}
 
                 break;
 

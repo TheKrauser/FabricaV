@@ -22,6 +22,7 @@ public class House_Talk : MonoBehaviour
     [SerializeField] private bool destroyOnEnd;
 
     [SerializeField] private bool cutscene;
+    [SerializeField] private bool finalDialogue;
     [SerializeField] private FirstPersonAIO fp;
 
     void Start()
@@ -51,6 +52,7 @@ public class House_Talk : MonoBehaviour
     public IEnumerator DisplayText()
     {
         //Debug.Log(positionInArray);
+
         if (scene != null)
             scene.playableGraph.GetRootPlayable(0).SetSpeed(0);
 

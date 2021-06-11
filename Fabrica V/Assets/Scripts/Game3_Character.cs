@@ -16,6 +16,8 @@ public class Game3_Character : MonoBehaviour
     {
         anim = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        PrefsManager.SetConto(3);
     }
 
     void Update()
@@ -38,6 +40,10 @@ public class Game3_Character : MonoBehaviour
             isWalking = false;
             anim.SetBool("isWalking", isWalking);
         }
+
+        if (Cursor.lockState == CursorLockMode.Locked)
+            Cursor.lockState = CursorLockMode.None;
+
     }
 
     void FixedUpdate()

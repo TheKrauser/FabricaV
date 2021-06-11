@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
+using TMPro;
 
 public class SpiderSpawn : MonoBehaviour
 {
@@ -13,20 +14,22 @@ public class SpiderSpawn : MonoBehaviour
 
     public static int spidersKilled;
     private bool timelinePlayed = false;
+    public static bool playerCanLose;
     [SerializeField] private PlayableDirector director;
     void Start()
     {
-        
+        playerCanLose = true;
     }
 
     void Update()
     {
         StartCoroutine(Spawn(spawnRate));
 
-        if (spidersKilled > 10 && !timelinePlayed)
+        if (spidersKilled > 35 && !timelinePlayed)
         {
             timelinePlayed = true;
             director.Play();
+            playerCanLose = false;
         }
     }
 
